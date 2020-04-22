@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/a9c0eaa902.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+
+        <div class="box-element">
+
+            <!-- presentation -->
+            <div class="element1">
+                <img src="./img/cerebro.png" alt="">
+                <span>Creative thinking</span>
+
+                <div class="social-networks">
+                    <a href="#"><i class="fab icon fa-facebook-square"></i></a>
+                    <a href="#"><i class="fab icon fa-twitter-square"></i></a>
+                    <a href="#"><i class="fab icon fa-instagram-square"></i></a>
+                </div>
+            </div>
+
+            <!-- log in and register -->
+            <div class="element2">
+
+                <div class="box-options">
+                    <span class="bt sing-in active" id="btSingIn" onclick="displayLogIn()">Sing in</span>
+                    <span class="bt sing-up"        id="btSingUp" onclick="displayRegister()">Sing up</span>
+                </div>
+
+                <div class="box-reg-log">
+
+                    <!-- form log in -->
+                    <form class="form form-log-in" id="formLogIn">
+
+                        <input type="email"    class="fields email"    placeholder="Email">
+                        <input type="password" class="fields password" placeholder="Password">
+
+                        <div class="box-remember">
+                            <input type="checkbox" id="check">
+                            <label for="check"><span></span>Remember me</label>
+
+                            <a href="#" class="recover-password">Did you forget your password?</a>
+                        </div>
+
+                        <input type="submit" class="bt-form bt-log-in" value="Log in">
+
+                    </form>
+
+                    <!-- form register -->
+                    <form class="form form-register" id="formRegister">
+
+                        <input type="text"     class="fields your-name"     placeholder="Your name">
+                        <input type="email"    class="fields email"         placeholder="Email">
+                        <input type="password" class="fields password"      placeholder="Password">
+                        <input type="password" class="fields password2"     placeholder="Repeat password">
+
+                        <div class="box-conditions">           
+                            By registering you accept the <a href="#">terms and conditions</a>
+                        </div>
+
+                        <input type="submit" class="bt-form bt-register" value="Register">
+
+                    </form>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <script>
+        let formLogIn =    document.getElementById("formLogIn");
+        let formRegister = document.getElementById("formRegister");
+
+        function displayLogIn(){
+            formLogIn.style.transform = `translateX(${0}%)`;
+            formRegister.style.transform = `translateX(${-100}%)`;
+            document.getElementById("btSingIn").classList.add("active");
+            document.getElementById("btSingUp").classList.remove("active");
+        }
+
+        function displayRegister(){
+            formLogIn.style.transform = `translateX(${-100}%)`;
+            formRegister.style.transform = `translateX(${0}%)`;
+            document.getElementById("btSingIn").classList.remove("active");
+            document.getElementById("btSingUp").classList.add("active");
+        }
+    </script>
+</body>
+</html>
